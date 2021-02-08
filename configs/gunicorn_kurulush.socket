@@ -1,0 +1,6 @@
+[Unit]
+Description=gunicorn socket for kurulush project
+[Socket]
+ListenStream=/run/gunicorn/kurulush_socket
+[Install]
+WantedBy=sockets.target
