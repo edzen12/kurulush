@@ -1,10 +1,11 @@
-from rest_framework import generics, permissions, viewsets
+from rest_framework import mixins, viewsets
 
-from .models import Gallery
 from . import serializers
+from .models import Gallery
 
 
-class GalleryView(viewsets.ModelViewSet):
+class GalleryView(mixins.ListModelMixin,
+                  mixins.RetrieveModelMixin,
+                  viewsets.GenericViewSet,):
     queryset = Gallery.objects.all()
     serializer_class = serializers.GallerySerializer
-
