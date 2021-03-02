@@ -24,8 +24,8 @@ SECRET_KEY = 'k*4n7=@a40ho!1&tkla-3yg3^i9*wxflw9%o&sl^+nsiv*d5&&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["*"]
-ALLOWED_HOSTS = ['127.0.0.1', '188.225.36.187']
+ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ['127.0.0.1', '188.225.36.187']
 
 
 # Application definition
@@ -142,4 +142,4 @@ STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# LOGIN_REDIRECT_URL = 'api_root'
+LOGIN_REDIRECT_URL = 'api_root'

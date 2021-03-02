@@ -7,7 +7,7 @@ from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
-# from .views import api_root
+from .views import api_root
 
 
 schema_view = get_schema_view(
@@ -25,7 +25,7 @@ schema_view = get_schema_view(
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-   #  path('api/', api_root, name='api_root'),
+    path('api/', api_root, name='api_root'),
 
     path('api/news/', include('apps.news.urls')),
     path('api/gallery/', include('apps.gallery.urls')),
