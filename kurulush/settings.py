@@ -24,8 +24,7 @@ SECRET_KEY = 'k*4n7=@a40ho!1&tkla-3yg3^i9*wxflw9%o&sl^+nsiv*d5&&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1:8000', '188.225.36.187']
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,6 +42,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'storages',
+
     'apps.gallery',
     'apps.news',
     'apps.product',
@@ -91,20 +91,7 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'kurulush',
-#         'USER': 'kurulushuser',
-#         'PASSWORD': 'kurulushpass21',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
 
-
-
-# Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -136,19 +123,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ],
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 9
 }
 
@@ -159,6 +138,8 @@ CORS_ORIGIN_WHITELIST = [
 
 
 STATIC_URL = '/static/'
-# STATIC_DIR = BASE_DIR / 'static'
 STATIC_ROOT = BASE_DIR / 'static'
-# STATICFILES_DIRS = [STATIC_DIR]
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+# LOGIN_REDIRECT_URL = 'api_root'
