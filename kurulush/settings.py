@@ -24,13 +24,8 @@ SECRET_KEY = 'k*4n7=@a40ho!1&tkla-3yg3^i9*wxflw9%o&sl^+nsiv*d5&&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ["*"]
-#ALLOWED_HOSTS = ['127.0.0.1', '188.225.36.187']
-=======
 # ALLOWED_HOSTS = ["*"]
 ALLOWED_HOSTS = ['127.0.0.1', '188.225.36.187']
->>>>>>> b6c7b0cc99b3976202519f47060c9f30ccdc4e82
 
 
 # Application definition
@@ -49,7 +44,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'storages',
-
     'apps.gallery',
     'apps.news',
     'apps.product',
@@ -135,15 +129,14 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny'
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 9,
+    'PAGE_SIZE': 3,
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
 }
 
 CORS_ORIGIN_WHITELIST = [
+    "http://127.0.0.1:3000",
     "http://127.0.0.1:8000",
-    "http://localhost:3000",
     "http://188.225.36.187:3000",
-    "http://188.225.36.187"
 ]
 
 
