@@ -22,7 +22,8 @@ class Product(models.Model):
     title = models.CharField("Заголовок", max_length=255)
     image = models.ImageField("Фото", upload_to="uploads", blank=True, null=True)
     description = models.TextField("Описание")
-    created = models.DateTimeField("Дата", auto_now_add=True)
+    product_state = models.BooleanField(verbose_name="Состояние готовности продукта")
+    created = models.DateTimeField(verbose_name="Дата", auto_now_add=True)
 
     def __str__(self):
         return self.title
