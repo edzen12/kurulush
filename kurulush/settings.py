@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '188.225.36.187']
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -115,6 +117,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
 LANGUAGE_CODE = 'ru'
+gettext = lambda s: s
+
+LANGUAGES = (
+    ('ru', gettext('Russian')),
+    ('en', gettext('English')),
+)
+
+LOCALE_PATHS = (
+    BASE_DIR / 'locale',
+)
 
 TIME_ZONE = 'UTC'
 
