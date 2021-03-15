@@ -1,10 +1,12 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
 from django.utils.safestring import mark_safe
+
 from .models import News
 
 
 @admin.register(News)
-class NewsAdmin(admin.ModelAdmin):
+class NewsAdmin(TranslationAdmin):
     list_display = ("id", "title","created")
     list_display_links = ("title",)
     readonly_fields = ("get_image",)

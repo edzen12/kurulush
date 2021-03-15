@@ -123,11 +123,13 @@ gettext = lambda s: s
 LANGUAGES = (
     ('ru', gettext('Russian')),
     ('en', gettext('English')),
+    ('ky', gettext('Kyrgyz')),
 )
 
 LOCALE_PATHS = (
     BASE_DIR / 'locale',
 )
+
 
 TIME_ZONE = 'UTC'
 
@@ -147,8 +149,9 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_WHITELIST = [
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:8000",
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:8000",
     "http://188.225.36.187:3000",
 ]
 
@@ -171,4 +174,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'oichiev.edzen@gmail.com'
-EMAIL_HOST_PASSWORD = 'aknologia2112allinonemigrate21QB'
+EMAIL_HOST_PASSWORD = 'xzxyaexaenfqkbgy'
