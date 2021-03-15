@@ -1,19 +1,14 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
+
 from .models import Product, Category
-from mptt.admin import DraggableMPTTAdmin
 
 
-admin.site.register(
-    Category,
-    DraggableMPTTAdmin,
-    list_display=(
-        'tree_actions',
-        'indented_title',
-    ),
-    list_display_links=(
-        'indented_title',
-    ),
-)
+@admin.register(Category)
+class CategoryAdmin(TranslationAdmin):
+    list_display = ['name']
 
 
-admin.site.register(Product)
+@admin.register(Product)
+class ProductAdmin(TranslationAdmin):
+    list_display = ['title']
