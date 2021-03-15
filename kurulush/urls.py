@@ -26,6 +26,7 @@ api_patterns = [
     path('news/', include('apps.news.urls')),
     path('gallery/', include('apps.gallery.urls')),
     path('product/', include('apps.product.urls')),
+    path('form/', include('apps.form.urls')),
 ]
 
 

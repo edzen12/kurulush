@@ -9,6 +9,7 @@ def api_root(request, format=None):
         'product': reverse('products-list', request=request, format=format),
         'gallery': reverse('gallery-list', request=request, format=format),
         'news': reverse('news-list', request=request, format=format),
+        'form': reverse('form-list', request=request, format=format),
         'category': reverse('category-list', request=request, format=format),
     })
     return response

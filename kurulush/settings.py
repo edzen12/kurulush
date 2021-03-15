@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'apps.gallery',
     'apps.news',
     'apps.product',
+    'apps.form',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,18 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+# CELERY_BROKER_URL = 'redis://localhost:6379/0'
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+# CELERY_ACCEPT_CONTENT = ['application/json']
+# CELERY_TASK_SERIALIZER = 'json'
+# CELERY_RESULT_SERIALIZER = 'json'
+# CELERY_TIMEZONE = 'Asia/Bishkek'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'oichiev.edzen@gmail.com'
+EMAIL_HOST_PASSWORD = 'aknologia2112allinonemigrate21QB'
