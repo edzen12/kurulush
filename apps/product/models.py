@@ -18,10 +18,10 @@ class Category(MPTTModel):
     
 
 class Product(models.Model):
-    category = TreeForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE)
+    category = TreeForeignKey(Category, verbose_name="Категория", on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField("Заголовок", max_length=255)
     image = models.ImageField("Фото", upload_to="uploads", blank=True, null=True)
-    description = models.TextField("Описание")
+    description = models.TextField("Описание", blank=True, null=True)
     product_state = models.BooleanField(verbose_name="Состояние готовности продукта")
     created = models.DateTimeField(verbose_name="Дата", auto_now_add=True)
 
