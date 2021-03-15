@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
+from modeltranslation.admin import TranslationAdmin
 
 from .models import Gallery
 
 
 @admin.register(Gallery)
-class GalleryAdmin(admin.ModelAdmin):
+class GalleryAdmin(TranslationAdmin):
     list_display = ("id", "title")
     list_display_links = ("title",)
     readonly_fields = ("get_image",)
