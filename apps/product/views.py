@@ -11,7 +11,7 @@ class ProductListView(mixins.ListModelMixin,
     queryset = Product.objects.all()
     serializer_class = serializers.ProductListSerializer
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['category']
+    filterset_fields = ['category', 'product_state']
 
 
 class CategoryListView(mixins.ListModelMixin,
