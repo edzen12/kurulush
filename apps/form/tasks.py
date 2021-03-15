@@ -18,7 +18,7 @@ def send_info(
     email = EmailMessage(
         "Добро пожаловать в Kurulush Una!",
         message, settings.EMAIL_HOST_USER,
-        ['oichiev.edzen@gmail.com', 'edznproger@gmail.com'],
+        ['oichiev.edzen@gmail.com', 'megabmx4477@gmail.com'],
     )
     email.send(fail_silently=False)
 
