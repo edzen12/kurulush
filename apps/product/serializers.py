@@ -19,10 +19,7 @@ class TechnicalDataSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = TechnicalData
-        fields = (
-            'id', 'product',
-            'key', 'value'
-        )
+        fields = "__all__"
 
 
 class ProductListSerializer(serializers.ModelSerializer):

@@ -11,5 +11,6 @@ def api_root(request, format=None):
         'news': reverse('news-list', request=request, format=format),
         'form': reverse('form-list', request=request, format=format),
         'category': reverse('category-list', request=request, format=format),
+        'technical': reverse('technical-list', request=request, format=format),
     })
     return response

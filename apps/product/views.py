@@ -2,7 +2,7 @@ from rest_framework import viewsets, mixins
 from django_filters.rest_framework import DjangoFilterBackend
 
 from . import serializers
-from .models import Product, Category
+from .models import Product, Category, TechnicalData
 
 
 class ProductListView(mixins.ListModelMixin,
@@ -19,3 +19,11 @@ class CategoryListView(mixins.ListModelMixin,
                        viewsets.GenericViewSet,):
     queryset = Category.objects.all()
     serializer_class = serializers.CategoryListSerializer
+
+
+class TechAPIViewSet(mixins.ListModelMixin,
+                       mixins.RetrieveModelMixin,
+                       viewsets.GenericViewSet,):
+    queryset = TechnicalData.objects.all()
+    serializer_class = serializers.TechnicalDataSerializer
+
