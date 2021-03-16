@@ -1,5 +1,5 @@
 from modeltranslation.translator import register, TranslationOptions
-from apps.product.models import Category, Product
+from apps.product.models import Category, Product, TechnicalData
 from apps.news.models import News
 from apps.gallery.models import Gallery
 
@@ -11,7 +11,12 @@ class CategoryTranslationOption(TranslationOptions):
 
 @register(Product)
 class ProductTranslationOption(TranslationOptions):
-    fields = ('title', 'description',)
+    fields = ('title', 'description', 'application_area')
+
+
+@register(TechnicalData)
+class TechnicalDataTranslationOption(TranslationOptions):
+    fields = ('key', 'value',)
 
 
 @register(News)
